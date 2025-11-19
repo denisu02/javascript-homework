@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact</title>
+        <link rel="stylesheet" href="./styles/index.css" />
+        <link rel="stylesheet" href="./styles/navbar.css" />
+    </head>
+
+    <body>
+        <header class="navbar">
+            <a class="logo" href="/index.html">GETaCAR</a>
+            <input type="checkbox" id="nav-toggle" style="display: none" />
+            <label for="nav-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav>
+                <ul>
+                    <li><a href="/index.html" class="highlight">Home</a></li>
+                    <li><a href="/index.html#inventory">Inventory</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="contact dark-theme">
+            <h1>Add a new car</h1>
+            <form id="add-car-form" class="add-car-form">
+                <input
+                    id="car-name"
+                    type="text"
+                    placeholder="Car name"
+                    required
+                />
+                <textarea
+                    id="car-description"
+                    placeholder="Car description"
+                    rows="3"
+                    required
+                ></textarea>
+                <select id="car-image" required>
+                    <option value="" disabled selected>Image</option>
+                </select>
+                <input
+                    id="car-price"
+                    type="number"
+                    placeholder="Car price"
+                    required
+                />
+                <button type="submit" class="btn-primary">Add car</button>
+            </form>
+            <div class="preview-car"></div>
+        </section>
+
+        <footer class="dark-footer">
+            <p>&copy; 2025 GETaCAR. All rights reserved.</p>
+        </footer>
+    </body>
+    <script src="./script/script.js"></script>
+</html>

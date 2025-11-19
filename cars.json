@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "BMW X1",
+        "description": "Compact luxury SUV with sporty handling and efficient engines.",
+        "image": "https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/x1.jpg",
+        "price": 32000
+    },
+    {
+        "id": "2",
+        "name": "BMW M3",
+        "description": "High-performance sports sedan powered by an inline-6 twin-turbo engine.",
+        "image": "https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/m33.jpg",
+        "price": 72000
+    },
+    {
+        "id": "3",
+        "name": "BMW M3",
+        "description": "Another M3 entry with premium interior and track-focused dynamics.",
+        "image": "https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/m3.jpg",
+        "price": 71000
+    },
+    {
+        "id": "4",
+        "name": "BMW M5",
+        "description": "Luxury performance sedan with a powerful V8 and advanced driving tech.",
+        "image": "https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/m55.jpg",
+        "price": 95000
+    },
+    {
+        "id": "5",
+        "name": "BMW M5",
+        "description": "Second M5 entry featuring all-wheel drive and executive comfort.",
+        "image": "https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/m5.jpeg",
+        "price": 94000
+    },
+    {
+        "id": "6",
+        "name": "BMW X6",
+        "description": "Sport activity coupe combining aggressive styling with SUV capabilities.",
+        "image": "https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/x6.jpg",
+        "price": 68000
+    }
+]
