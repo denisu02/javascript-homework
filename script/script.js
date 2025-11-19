@@ -1,5 +1,11 @@
 let cars = [];
 const carLinks = [
+    'https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/x1.jpg',
+    'https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/m33.jpg',
+    'https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/m3.jpg',
+    'https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/m55.jpg',
+    'https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/m5.jpeg',
+    'https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/x6.jpg',
     'https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/x7.jpg"',
     'https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/x8.jpg"',
     'https://gwcppaiakdnqpbwzabta.supabase.co/storage/v1/object/public/cars-image/x9.jpg"',
