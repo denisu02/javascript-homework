@@ -106,7 +106,7 @@ body {
 
 .inventory.dark-theme,
 .about.dark-theme,
-.contact.dark-theme {
+.add-form.dark-theme {
     background: rgba(24, 24, 24, 0.92);
     border-radius: 18px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
@@ -118,7 +118,7 @@ body {
 
 .inventory h1,
 .about h1,
-.contact h1 {
+.add-form h1 {
     font-size: 2.7em;
     margin-bottom: 24px;
     color: #c59d5f;
@@ -322,7 +322,7 @@ body {
     .features.dark-theme,
     .inventory.dark-theme,
     .about.dark-theme,
-    .contact.dark-theme {
+    .add-form.dark-theme {
         max-width: 98vw;
         padding-left: 10px;
         padding-right: 10px;
@@ -361,7 +361,7 @@ body {
 
     .inventory.dark-theme,
     .about.dark-theme,
-    .contact.dark-theme {
+    .add-form.dark-theme {
         padding: 20px 4px;
         min-width: unset;
     }

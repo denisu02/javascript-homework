@@ -104,7 +104,7 @@ const previewCarImage = () => {
 const addButton = document.querySelector('.add-button');
 if (addButton) {
     addButton.addEventListener('click', () => {
-        location.href = 'contact.html';
+        location.href = 'form.html';
     });
 }
 
