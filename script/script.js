@@ -26,32 +26,54 @@ const renderCars = () => {
     const carGrid = document.querySelector('.car-grid');
     if (!carGrid) return;
 
+    carGrid.innerHTML = '';
+
     for (const car of cars) {
         const carCard = document.createElement('div');
         carCard.classList.add('car-card');
 
         carCard.innerHTML = `
-            <img src="${car.image}" alt="${car.name}" />
-            <h3>${car.name}</h3>
-            <p>${car.description}</p>
-            <p>Price: ${car.price}$</p>
+        <div class="buttons">
+            <button class="edit-button" id="edit${car.id}">Edit</button>
+            <button class="delete-button" id="delete${car.id}">Delete</button>
+        </div>
+        <img src="${car.image}" alt="${car.name}" />
+        <h3>${car.name}</h3>
+        <p>${car.description}</p>
+        <p>Price: ${car.price}$</p>
         `;
 
         carGrid.appendChild(carCard);
+
+        const carToEdit = document.getElementById(`edit${car.id}`);
+        carToEdit.addEventListener('click', () => editCar(car.id));
+
+        const carToDelete = document.getElementById(`delete${car.id}`);
+        carToDelete.addEventListener('click', () => deleteCar(car.id));
     }
 };
 
 const addCar = () => {
     const addCarForm = document.getElementById('add-car-form');
-    if (addCarForm) {
-        addCarForm.addEventListener('submit', (event) => {
-            event.preventDefault();
+    if (!addCarForm) return;
 
-            const name = document.getElementById('car-name').value;
-            const description = document.getElementById('car-description').value;
-            const image = document.getElementById('car-image').value;
-            const price = parseFloat(document.getElementById('car-price').value);
+    addCarForm.addEventListener('submit', (event) => {
+        event.preventDefault();
 
+        const name = document.getElementById('car-name').value;
+        const description = document.getElementById('car-description').value;
+        const image = document.getElementById('car-image').value;
+        const price = parseFloat(document.getElementById('car-price').value);
+
+        const editCarId = localStorage.getItem('editCarId');
+
+        if (editCarId) {
+            const index = cars.findIndex((car) => car.id === editCarId);
+            if (index !== -1) {
+                cars[index] = { id: editCarId, name, description, image, price };
+            }
+            localStorage.removeItem('editCarId');
+        } else {
             const newCar = {
                 id: (cars.length + 1).toString(),
                 name,
@@ -59,15 +81,12 @@ const addCar = () => {
                 image,
                 price,
             };
-
             cars.push(newCar);
-            localStorage.setItem('cars', JSON.stringify(cars));
-            addCarForm.reset();
-            renderCars();
-            alert('New car added successfully!');
-            location.href = '/javascript-homework/index.html';
-        });
-    }
+        }
+        localStorage.setItem('cars', JSON.stringify(cars));
+        alert(editCarId ? 'Car edited successfully!' : 'New car added successfully!');
+        location.href = '/javascript-homework/index.html';
+    });
 };
 
 const populateCarImageDropdown = () => {
@@ -112,4 +131,38 @@ document.addEventListener('DOMContentLoaded', () => {
     addCar();
     populateCarImageDropdown();
     previewCarImage();
+
+    const editCarId = localStorage.getItem('editCarId');
+    if (editCarId) {
+        const carToEdit = cars.find((car) => car.id === editCarId);
+        if (carToEdit) {
+            const nameInput = document.getElementById('car-name');
+            const descriptionInput = document.getElementById('car-description');
+            const imageInput = document.getElementById('car-image');
+            const priceInput = document.getElementById('car-price');
+
+            if (nameInput && descriptionInput && imageInput && priceInput) {
+                nameInput.value = carToEdit.name;
+                descriptionInput.value = carToEdit.description;
+                imageInput.value = carToEdit.image;
+                priceInput.value = carToEdit.price;
+            }
+        } else {
+            alert(`Car with ${editCarId} not found`);
+        }
+    }
+    localStorage.removeItem('editCarId');
 });
+
+function editCar(id) {
+    localStorage.setItem('editCarId', id);
+    location.href = '/javascript-homework/form.html';
+}
+
+function deleteCar(id) {
+    cars = cars.filter((car) => car.id !== id.toString());
+    localStorage.setItem('cars', JSON.stringify(cars));
+    renderCars();
+
+    alert('Car deleted successfully!');
+}
