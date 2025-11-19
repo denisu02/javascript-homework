@@ -68,7 +68,7 @@ const addCar = () => {
             addCarForm.reset();
             renderCars();
             alert('New car added successfully!');
-            location.href = 'index.html';
+            location.href = '/javascript-homework/index.html';
         });
     }
 };
@@ -104,7 +104,7 @@ const previewCarImage = () => {
 const addButton = document.querySelector('.add-button');
 if (addButton) {
     addButton.addEventListener('click', () => {
-        location.href = 'form.html';
+        location.href = '/javascript-homework/form.html';
     });
 }
 
