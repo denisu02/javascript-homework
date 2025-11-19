@@ -144,6 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 descriptionInput.value = carToEdit.description;
                 imageInput.value = carToEdit.image;
                 priceInput.value = carToEdit.price;
+
+                imageInput.style.display = 'none';
             }
         } else {
             alert(`Car with ${editCarId} not found`);
