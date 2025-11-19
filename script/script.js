@@ -48,12 +48,9 @@ const addCar = () => {
             event.preventDefault();
 
             const name = document.getElementById('car-name').value;
-            const description =
-                document.getElementById('car-description').value;
+            const description = document.getElementById('car-description').value;
             const image = document.getElementById('car-image').value;
-            const price = parseFloat(
-                document.getElementById('car-price').value
-            );
+            const price = parseFloat(document.getElementById('car-price').value);
 
             const newCar = {
                 id: (cars.length + 1).toString(),
