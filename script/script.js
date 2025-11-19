@@ -68,10 +68,7 @@ const addCar = () => {
         const editCarId = localStorage.getItem('editCarId');
 
         if (editCarId) {
-            const index = cars.findIndex((car) => car.id === editCarId);
-            if (index !== -1) {
-                cars[index] = { id: editCarId, name, description, image, price };
-            }
+            cars[editCarId - 1] = { id: editCarId, name, description, image, price };
             localStorage.removeItem('editCarId');
         } else {
             const newCar = {
