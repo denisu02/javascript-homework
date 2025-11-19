@@ -84,6 +84,7 @@ const addCar = () => {
             cars.push(newCar);
         }
         localStorage.setItem('cars', JSON.stringify(cars));
+        localStorage.removeItem('editCarId');
         alert(editCarId ? 'Car edited successfully!' : 'New car added successfully!');
         location.href = '/javascript-homework/index.html';
     });
@@ -151,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(`Car with ${editCarId} not found`);
         }
     }
-    localStorage.removeItem('editCarId');
 });
 
 function editCar(id) {
